@@ -1,0 +1,92 @@
+@font-face {
+    font-family: modernLoveCaps;
+    src: url("./Assets/Fonts/modernlove-caps-unspecified.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F9F7F2;
+    color: #333333;
+    font-family:sans-serif;
+    margin: 50px;        
+    padding: 10px;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+}
+
+.logo-link:hover .logo-print {
+    color: #9B57D3;
+    transition: 0.3s;
+}
+
+.nav-bar ul{
+    background-color: #F9F7F2;
+    padding: 10px;
+    font-family: sans-serif;
+    list-style-type: none;
+    margin: 0px; 
+    overflow: hidden; 
+}
+
+.nav-bar a {
+    color:#333333;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;;
+}
+
+.nav-bar a:hover {
+    background-color: #9B57D3;
+    color: white;
+}
+
+.nav-bar li{
+    float: right; 
+}
+
+h1 {
+    font-size: 50px;
+    font-family: modernLoveCaps, sans-serif;
+    color: #333333;
+}
+
+.artist-name {
+    text-align: center;
+    font-size: 30px;
+    font-family: modernLoveCaps, sans-serif;
+    color: #333333;  
+}
+
+.artist-description {
+    text-align: center;
+    font-family: sans-serif;
+    color: #333333;  
+}
+
+.card-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   gap: 1rem;
+}
+
+.artwork-card {
+    flex: 1 1 300px;
+    max-width: 300px;
+}
+
+.artwork-card img{
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
