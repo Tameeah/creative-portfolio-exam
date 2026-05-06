@@ -62,9 +62,10 @@ h1 {
 
 .artist-name {
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-family: modernLoveCaps, sans-serif;
-    color: #333333;  
+    color: #333333; 
+    padding: 20px; 
 }
 
 .artist-description {
@@ -76,12 +77,13 @@ h1 {
 .card-grid {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-   gap: 1rem;
+   gap: 2rem;
+   padding: 30px;
 }
 
 .artwork-card {
-    flex: 1 1 300px;
-    max-width: 300px;
+    flex: 1 1 400px;
+    max-width: 400px;
 }
 
 .artwork-card img{
@@ -95,9 +97,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     min-height: 80vh; 
-    padding: 0 50px;
+    padding: 0 20px;
 }
 
 .intro-text {
@@ -107,14 +109,13 @@ h1 {
 }
 
 .intro-image {
-    flex: 0 0 200px;
+    flex: 0 0 300px;
 }
 
 .intro-image img {
     width: 100%;
     height: auto;
     display: block; 
-    border-radius: 10px;
 }
 
 .flip-card {
