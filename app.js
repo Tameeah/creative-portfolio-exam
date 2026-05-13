@@ -1,5 +1,8 @@
-const card = document.querySelector('.flip-card');
+const cards = document.querySelectorAll('.flip-card');
 
-card.addEventListener('click', function() {
-    card.classList.toggle('is-flipped');
+cards.forEach((card) => {
+    card.addEventListener('click', function() {
+        this.classList.toggle('is-flipped');
+    });
 });
+
