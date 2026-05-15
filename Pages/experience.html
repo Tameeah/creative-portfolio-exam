@@ -24,6 +24,53 @@
             </ul>
         </nav>
     </header>
+
+    <main id="experience-page">
+        <h2>My Experience Through The Years</h2>
+
+        <div class="experience-grid">
+            <div class="year-card" onclick="openProject(
+                '2023', 
+                'Project Overview', 
+                ['../Assets/Images/Other/6c760710-71d1-48b1-b9dc-279e8f8bc95f.jpg',
+                'img2.jpg',
+                'img3.jpg'
+                ])">
+                <h3>2023</h3>
+            </div>
+            <div class="year-card" onclick="openProject(
+                '2024', 
+                'Project Overview',
+                 ['../Assets/Images/Digital Artworks/Tim beach illustration.png',
+                 'img5.jpg',
+                 'img6.jpg'])">
+                <h3>2024</h3>
+            </div>
+            <div class="year-card" onclick="openProject('2025', 'Project Overview', ['img7.jpg','img8.jpg','img9.jpg'])">
+                <h3>2025</h3>
+            </div>
+            <div class="year-card" onclick="openProject('2026', 'Project Overview', ['img10.jpg','img11.jpg','img12.jpg'])">
+                <h3>2026</h3>
+            </div>
+        </div>
+
+        <div id="projectPopup" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closeProject()">&times;</span>
+                <h1 id="popupTitle">Year</h1>
+                <p id="popupOverview">Project details go here...</p>
+                <div class="popup-images">
+                    <img id="pImg1" src="" alt="Project Image 1">
+                    <img id="pImg2" src="" alt="Project Image 2">
+                    <img id="pImg3" src="" alt="Project Image 3">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../app.js"></script>
+
+  
     
 </body>
 </html>
