@@ -1,3 +1,48 @@
+//DOM (HTML structure) is loaded before the JS is executed
+document.addEventListener("DOMContentLoaded", function () {
+
+    //This is the JS driven navigation for all othe pages in my website. 
+
+    //Too see if we are currently inside the "Pages" folder
+    const isInPagesFolder = window.location.pathname.includes('/Pages/');
+    
+    // ./ for index
+    // ../ for pages folder
+    const basePrefix = isInPagesFolder ? '../' : './';
+
+    //the HTML for your nav bar using the correct relative paths
+    const navigationHTML = `
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="${basePrefix}Pages/about.html">About Me</a></li>
+                <li><a href="${basePrefix}Pages/experience.html">Experience</a></li>
+                <li><a href="${basePrefix}Pages/artworks.html">Artworks</a></li>
+                <li><a href="${basePrefix}Pages/introduction.html">Introduction</a></li>
+            </ul>
+        </nav>
+    `;
+
+    // 4. Find the placeholder and inject the HTML
+    const placeholder = document.getElementById("nav-placeholder");
+    if (placeholder) {
+        placeholder.innerHTML = navigationHTML;
+    } 
+
+    //h1 is the Home link
+    const logoTitle = document.querySelector(".logo-print");
+    if(logoTitle) {
+        logoTitle.style.cursor = "pointer";
+
+        logoTitle.addEventListener("click", function() {
+            window.location.href = basePrefix + "index.html";
+        });
+    }
+});
+
+
+// This is the JS for the flip cards and pop-up on the "Artworks page".   
+    
+
 const cards = document.querySelectorAll('.flip-card');
 
 cards.forEach((card) => {
@@ -5,6 +50,8 @@ cards.forEach((card) => {
         this.classList.toggle('is-flipped');
     });
 });
+
+//This is the JS for the pop-up for the "Experience Page". 
 
 function openProject(year, overview, images) {
     // 1. Set the Title and Text

@@ -24,7 +24,7 @@ body {
     cursor: pointer;
 }
 
-.logo-link:hover .logo-print {
+.logo-print:hover {
     color: #9B57D3;
     transition: 0.3s;
 }
