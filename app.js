@@ -1,6 +1,7 @@
 //DOM (HTML structure) is loaded before the JS is executed
 document.addEventListener("DOMContentLoaded", function () {
 
+    //Navigation:
     //This is the JS driven navigation for all othe pages in my website. 
 
     //Too see if we are currently inside the "Pages" folder
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 
 //Artwroks Page: 
 

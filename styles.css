@@ -76,19 +76,20 @@ h1 {
 }
 
 .card-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-   gap: 50px;
-   padding: 30px;
+   column-count: 4;
+   column-gap: 15px;
+   padding: 15px;
    margin-top: 20px;
 }
 
 .artwork-card {
-    flex: 2 2 6000px;
-    max-width: 6000px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-.artwork-card img{
+.artwork-card img,
+.artwork-card video {
     width: 100%;
     height: auto;
     display: block;
@@ -345,4 +346,23 @@ footer-content {
     right: 25px;
     font-size: 30px;
     cursor: pointer;
+}
+
+/* Responsive adjustments for Tablets and Mobile Phones */
+@media (max-width: 1024px) {
+    .card-grid {
+        column-count: 3; /* 3 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        column-count: 2; /* 2 columns on small tablets/large phones */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        column-count: 1; /* 1 clean full-width column on small phones */
+    }
 }
