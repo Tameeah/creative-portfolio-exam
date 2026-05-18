@@ -250,15 +250,15 @@ h1 {
 }
 
 
-.about-image {
+.about-video {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
-.about-image img {
-    width: 100%;
-    max-width: 450px;
+.about-video video {
+    width: 450px;
+    max-width: 500px;
     height: auto;
     border-radius: 4px;
 }

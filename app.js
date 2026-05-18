@@ -72,8 +72,7 @@ if (searchInput) {
 
 
 
-
-
+//Experience Page:
 //This is the JS for the pop-up for the "Experience Page". 
 
 function openProject(year, overview, images) {
