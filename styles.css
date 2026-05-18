@@ -104,8 +104,8 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-height: 80vh; 
-    padding: 0 20px;
+    min-height: 70vh; 
+    padding: 0 40px;
 }
 
 .intro-text {
@@ -115,7 +115,7 @@ h1 {
 }
 
 .intro-image {
-    flex: 0 0 300px;
+    flex: 0 0 400px;
 }
 
 .intro-image img {
@@ -147,12 +147,51 @@ h1 {
     outline:none;
 }
 
+.gallery-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom:20px;
+}
+
+.gallery-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 5px;
+    width: 100%;
+}
+
+.gallery-arrow {
+    color: #333333;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.gallery-arrow:hover {
+    background-color: #9B57D3;
+    color: white;
+    transform: scale(1.1);
+}
+
+.prev-arrow { margin-right: 15px; }
+.next-arrow { margin-left: 15px; } 
+
 .flip-card {
-    background-color: transparent;
+    flex: 0 0 auto;
     width: 250px;
     height: 300px;
-    perspective: 1000px; 
-    transition: transform 0.3s ease;
+    perspective: 1000px;
 }
 
 .flip-card:hover {

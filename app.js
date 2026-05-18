@@ -43,6 +43,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Artwroks Page: 
 
+//slider
+const containers = document.querySelectorAll('.gallery-wrapper');
+
+containers.forEach(container => {
+    const track = container.querySelector('.gallery-track');
+    const nextBtn = container.querySelector('.next-arrow');
+    const prevBtn = container.querySelector('.prev-arrow');
+    
+    const scrollAmount = 330;
+
+    if(nextBtn && prevBtn && track) {
+        nextBtn.addEventListener('click', () => {
+            track.scrollLeft += scrollAmount;
+        });
+
+        prevBtn.addEventListener('click', () => {
+            track.scrollLeft -= scrollAmount;
+        });
+    }
+});
+
 // This is the JS for the flip cards on the "Artworks page".   
 const cards = document.querySelectorAll('.flip-card');
 
