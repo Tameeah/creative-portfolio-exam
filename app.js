@@ -39,10 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+//Artwroks Page: 
 
-// This is the JS for the flip cards and pop-up on the "Artworks page".   
-    
-
+// This is the JS for the flip cards on the "Artworks page".   
 const cards = document.querySelectorAll('.flip-card');
 
 cards.forEach((card) => {
@@ -50,6 +49,30 @@ cards.forEach((card) => {
         this.classList.toggle('is-flipped');
     });
 });
+
+//This is the filter/search function 
+const searchInput = document.getElementById('art-search');
+const categories = document.querySelectorAll('.media-category');
+
+if (searchInput) {
+    searchInput.addEventListener('input', function(event) {
+        const searchTerm = event.target.value.toLowerCase().trim();
+
+        categories.forEach((category) => {
+            const categoryTitle = category.querySelector('h2').textContent.toLowerCase();
+
+            if (categoryTitle.includes (searchTerm)) {
+                category.style.display = "";
+            } else{
+                category.style.display = "none";
+            }
+        });
+    });
+}
+
+
+
+
 
 //This is the JS for the pop-up for the "Experience Page". 
 
