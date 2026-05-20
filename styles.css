@@ -304,16 +304,35 @@ h1 {
 }
 
 footer {
-    background-color:  #e3a209;
     border-top: 1px solid #333333;
     padding: 40px;
-    text-align: center;
+    text-align:right;
 }
 
-footer-content {
+.footer-content {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links {
+    text-decoration: none;
+    color:#9B57D3;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color:#e3a209;
 }
 
 /* Layout for Experience Page */
