@@ -35,6 +35,8 @@ body {
     font-family: sans-serif;
     list-style-type: none;
     margin: 0px; 
+    border-top: 1px solid #898987;
+    border-bottom: 1px solid #898987;
     overflow: hidden; 
 }
 
@@ -64,6 +66,12 @@ h1 {
     font-size: 50px;
     font-family: modernLoveCaps, sans-serif;
     color: #333333;
+}
+
+.intro-hero p {
+    font-size: 1rem;
+    color: #333333;
+    text-align: center;
 }
 
 .artist-name {
@@ -106,21 +114,43 @@ h1 {
 
 .intro-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 10px;
-    min-height: 70vh; 
-    padding: 0 40px;
+    gap: 30px;
+    padding: 60px 40px;
 }
 
 .intro-text {
     flex: 1;
-    max-width: 500px;
+    max-width: 550px;
     text-align: center; 
+    padding: 0 20px;
 }
 
+.intro-text h2 {
+    font-family: modernLoveCaps, sans-serif;
+    font-size: 38px;
+    color: #333333;
+    margin-bottom: 25px;
+    margin-top: 0px;
+}
+
+.intro-text p {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+
 .intro-image {
-    flex: 0 0 400px;
+    flex: 0 0 340px;
+    margin-top: 20px;
 }
 
 .intro-image img {
