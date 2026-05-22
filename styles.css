@@ -46,6 +46,11 @@ body {
     text-align: center;;
 }
 
+.nav-bar a.active {
+    color:#9B57D3;
+    font-weight: bold;
+}
+
 .nav-bar a:hover {
     background-color: #9B57D3;
     color: white;

@@ -27,6 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const placeholder = document.getElementById("nav-placeholder");
     if (placeholder) {
         placeholder.innerHTML = navigationHTML;
+
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-bar a');
+
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+
+            if (currentPath.includes(linkPath.replace(/^\.\.\/|^\.\//, ''))) {
+                link.classList.add('active');
+            }
+        });
     } 
 
     //h1 is the Home link
