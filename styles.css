@@ -162,6 +162,15 @@ h1 {
 
 /* Layout for Artworks Page */
 
+.artworks-title {
+    text-align: center;
+    font-family: modernLoveCaps, sans-serif;
+    font-size: 38px;
+    color: #333333;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
 .media-category {
     padding: 30px;
 }
