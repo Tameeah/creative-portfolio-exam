@@ -109,15 +109,40 @@ if (searchInput) {
 //Experience Page:
 //This is the JS for the pop-up for the "Experience Page". 
 
-function openProject(year, overview, images) {
-    // 1. Set the Title and Text
+function openProject(year, overview, mediaType, assetData) {
+    // the title and overview text
     document.getElementById('popupTitle').innerText = year;
     document.getElementById('popupOverview').innerText = overview;
 
-    // 2. Set the Images
-    document.getElementById('pImg1').src = images[0];
-    document.getElementById('pImg2').src = images[1];
-    document.getElementById('pImg3').src = images[2];
+    const mediaContainer = document.getElementById('popupMedia');
+
+    mediaContainer.innerHTML = '';
+
+    // the media layout based on the type: image or video
+    if (mediaType === 'image') {
+
+        const imageArray = assetData.split(',');
+
+        imageArray.forEach((srcString) => {
+            const imgElement = document.createElement('img');
+            imgElement.src = srcString.trim();
+            imgElement.alt = 'Project Image';
+            imgElement.className = "responsive-media";
+            mediaContainer.appendChild(imgElement);
+        });
+    } else if (mediaType === 'video') {
+
+        const videoElement = document.createElement('video');
+        videoElement.src =assetData;
+        videoElement.autoplay = true;
+        videoElement.muted = true;
+        videoElement.loop = true;
+        videoElement.playInLine = true;
+        videoElement.className = "responsive-media video-style";
+
+        mediaContainer.appendChild(videoElement);
+    }
+
 
     // 3. Show the pop-up
     document.getElementById('projectPopup').style.display = 'block';
@@ -126,6 +151,7 @@ function openProject(year, overview, images) {
 function closeProject() {
     // Hide the pop-up
     document.getElementById('projectPopup').style.display = 'none';
+    document.getElementById('popupMedia').innerHTML = '';
 }
 
 

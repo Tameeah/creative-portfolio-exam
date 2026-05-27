@@ -25,34 +25,36 @@
             <div class="year-card" onclick="openProject(
                 '2023 : The Sun ', 
                 'In my matric year, all the students were given the opportunity to explore their art style,media and subjects. In 2023 I focused on creating a series of artworks based on the Earth,Sun and the Moon. This project was my favourite to work on during my June examination period. I was most proud of The Sun. This project explored my creative ability to layer various subject into one brilliant artwork. I wored with multiple media such as charcoal, acrylic paint, oil pastels and chalk. In 2023 I really went over my boundaries and brought colour into something beautfiul.',
-                ['../Assets/Images/2023/The Sun B&W.jpg',
-                '../Assets/Images/2023/The Sun Final.jpg',
-                '../Assets/Images/2023/The Sun Multi.jpg'
-                ])">
+                'image',
+                '../Assets/Images/2023/The Sun B&W.jpg, ../Assets/Images/2023/The Sun Final.jpg, ../Assets/Images/2023/The Sun Multi.jpg'
+                )">
                 <h3>2023</h3>
             </div>
+
             <div class="year-card" onclick="openProject(
                 '2024', 
                 'Project Overview',
-                 ['../Assets/Images/Digital Artworks/Tim beach illustration.png',
-                 'img5.jpg',
-                 'img6.jpg'])">
+                'image',
+                 '../Assets/Images/Digital Artworks/Tim beach illustration.png, img5.jpg, img6.jpg'
+                 )">
                 <h3>2024</h3>
             </div>
+
             <div class="year-card" onclick="openProject(
                 '2025 : Wandering Whiskers ',
                  'Project Overview',
-                  ['img7.jpg',
-                  'img8.jpg',
-                  'img9.jpg'])">
+                 'video',
+                 '../Assets/Animations/Firework Animation.mp4'
+                  )">
                 <h3>2025</h3>
             </div>
+
             <div class="year-card" onclick="openProject(
                 '2026 : Smack',
                  'Project Overview. ',
-                  ['../Assets/Images/Digital Artworks/Hirono Characters .png',
-                  '../Assets/Images/Digital Artworks/Tim beach illustration.png',
-                  'img12.jpg'])">
+                 'image',
+                  '../Assets/Images/Digital Artworks/Hirono Characters .png, ../Assets/Images/Digital Artworks/Tim beach illustration.png, img12.jpg'
+                  )">
                 <h3>2026</h3>
             </div>
         </div>
@@ -62,11 +64,8 @@
                 <span class="close-btn" onclick="closeProject()">&times;</span>
                 <h1 id="popupTitle">Year</h1>
                 <p id="popupOverview">Project details go here...</p>
-                <div class="popup-images">
-                    <img id="pImg1" src="" alt="Project Image 1">
-                    <img id="pImg2" src="" alt="Project Image 2">
-                    <img id="pImg3" src="" alt="Project Image 3">
-                </div>
+                
+                <div id="popupMedia" class="popup-media-container"></div>                
             </div>
         </div>
     </main>
