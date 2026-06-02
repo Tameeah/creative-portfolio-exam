@@ -381,12 +381,25 @@ footer {
 
 /* Layout for Experience Page */
 
+#experience-page {
+    padding-top: 80px;
+    text-align: center;
+}
+
+#experience-page h2 {
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
 .experience-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    padding: 50px;
+    gap: 40px;
+    padding: 20px;
     justify-content: center;
+
+    max-width: 1050px;
+    margin: 0 auto;
 }
 
 .year-card {
@@ -432,21 +445,6 @@ footer {
     position: relative;
     text-align: center;
 }
-
-/* scroll bar styleing 
-.popup-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.popup-content:-webkit-scrollbar-track {
-    background:#9B57D3;
-    border-radius: 10px;
-}
-
-.popup-content::-webkit-scrollbar-thumb {
-    background-color: #9B57D3;
-    border-radius: 10px;
-}*/
 
 #popupTitle {
     font-size: 2.8rem;
