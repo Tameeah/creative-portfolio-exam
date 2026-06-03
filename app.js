@@ -49,7 +49,98 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = basePrefix + "index.html";
         });
     }
+
+    //lightbox function for the homepage/ index page:
+    const cardGrid = document.querySelector(".card-grid");
+
+    if (cardGrid) {
+        const artworkCards = Array.from(document.querySelectorAll(".artwork-card"));
+        const overlay = document.getElementById("lightboxOverlay");
+        const mediaContainer = document.getElementById("lightboxMediaContainer");
+        const closeBtn = document.querySelector(".lightbox-close");
+        const prevBtn = document.querySelector(".lightbox-prev");
+        const nextBtn = document.querySelector(".lightbox-next");
+
+        let currentIndex = 0;
+
+        function showMedia(index) {
+            mediaContainer.innerHTML = "";
+            const activeCard = artworkCards[index];
+            const originalMedia = activeCard.querySelector("img, video");
+
+            if (!originalMedia) return;
+
+            if (originalMedia.tagName.toLowerCase() === "video") {
+                const videoClone = document.createElement("video");
+                const originalSource = originalMedia.querySelector("source");
+
+                videoClone.src = originalSource ? originalSource.src : originalMedia.src;
+                videoClone.autoplay = true;
+                videoClone.controls = true;
+                videoClone.loop = true;
+                videoClone.muted = false;
+                mediaContainer.appendChild(videoClone);
+            } else {
+                const imgClone = document.createElement("img");
+                imgClone.src = originalMedia.src;
+                imgClone.alt = "Expanded Portfolio Visual View";
+                mediaContainer.appendChild(imgClone);
+            }
+        }
+
+        //navigation for the lightbox overlay
+        function openLightbox(index) {
+            currentIndex = index;
+            showMedia(currentIndex);
+            overlay.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+            overlay.style.display = "none";
+            mediaContainer.innerHTML = "";
+            document.body.style.overflow = "";
+        }
+
+        function navigateNext() {
+            currentIndex = (currentIndex + 1) % artworkCards.length;
+            showMedia(currentIndex);
+        }
+
+        function navigatePrev() {
+            currentIndex = (currentIndex - 1 + artworkCards.length) % artworkCards.length;
+            showMedia(currentIndex);
+        }
+
+        //event listeners for the lightbox functionality
+        artworkCards.forEach((card, index) => {
+            card.addEventListener("click", function () {
+                openLightbox(index);
+            });
+        });
+
+        closeBtn.addEventListener("click", closeLightbox);
+        nextBtn.addEventListener("click", navigateNext);
+        prevBtn.addEventListener("click", navigatePrev);
+
+        overlay.addEventListener("click", function (e) {
+            if (e.target === overlay || e.target === mediaContainer) {
+                closeLightbox();
+            }
+        });
+
+        //keyboard navigation for the lightbox
+        document.addEventListener("keydown", function (e) {
+            if (overlay.style.display === "flex") {
+                if (e.key === "ArrowRight") navigateNext();
+                if (e.key === "ArrowLeft") navigatePrev();
+                if (e.key === "Escape") closeLightbox();
+            }
+        });
+    }    
 });
+
+
 
 
 //Artwroks Page: 
