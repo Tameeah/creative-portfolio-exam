@@ -184,7 +184,7 @@ if (searchInput) {
         const searchTerm = event.target.value.toLowerCase().trim();
 
         categories.forEach((category) => {
-            const categoryTitle = category.querySelector('h2').textContent.toLowerCase();
+            const categoryTitle = category.querySelector('h3').textContent.toLowerCase();
 
             if (categoryTitle.includes (searchTerm)) {
                 category.style.display = "";
