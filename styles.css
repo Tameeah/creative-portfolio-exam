@@ -9,6 +9,30 @@
     box-sizing: border-box;
 }
 
+/* smooth fade transistion between pages */
+
+.page-transition-overlay {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color:#F9F7F2;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded .page-transition-overlay {
+    opacity: 0;
+}
+
+body.is-exiting .page-transition-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* Layout for Index Page */
 body {
     background-color: #F9F7F2;

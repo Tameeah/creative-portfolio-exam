@@ -1,6 +1,27 @@
 //DOM (HTML structure) is loaded before the JS is executed
 document.addEventListener("DOMContentLoaded", function () {
 
+    //function for the smooth fade transistion
+    document.body.classList.add("loaded");
+
+    const links = document.querySelectorAll('a[href]:not([href^="#"]):not([target="_blank"])');
+
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            const destination = this.href;
+
+            if (destination && destination.includes("mailto")) {
+                e.preventDefault();
+
+                document.body.classList.remove("is-exiting");
+
+                setTimeout(() => {
+                    window.location.href = destination;
+                }, 500);
+            }
+        });
+    })
+
     //Navigation:
     //This is the JS driven navigation for all othe pages in my website. 
 
