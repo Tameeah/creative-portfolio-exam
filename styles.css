@@ -422,16 +422,40 @@ h1 {
     border-radius: 4px;
 }
 
+.skills-row {
+    display:flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.skills-column {
+    flex: 1;
+    text-align: center;
+}
+
+.skills-column ul {
+    text-align: left;
+    display: inline-block;
+}
+
+.desires-sections {
+    margin-top: 40px;
+    text-align: center;
+}
+
+
 footer {
     border-top: 1px solid #333333;
-    padding: 40px;
-    text-align:right;
+    padding: 50px 20px;
+    background-color: transparent;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
 }
 
 
@@ -441,17 +465,24 @@ footer {
     gap: 25px;
 }
 
-.social-links {
+.social-icon {
     text-decoration: none;
     color:#9B57D3;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: color 0.3s;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
 }
 
 .social-icon:hover {
     color:#e3a209;
+    transform: translateY(-3px);
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: #666666;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
 /* Layout for Experience Page */
@@ -643,6 +674,11 @@ footer {
     .responsive-media.video-style {
         max-width: 100%;
     }
+
+    .skills-row {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 /* Responsive adjustments for small tablet/ large phone (screen below 768px) */
@@ -720,6 +756,10 @@ footer {
 @media (max-width: 480px) {
     .card-grid {
         column-count: 1; /* 1 clean full-width column on small phones */
+    }
+
+    .social-icon {
+        font-size: 1rem;
     }
 }
 
