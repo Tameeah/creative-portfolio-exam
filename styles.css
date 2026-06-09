@@ -209,27 +209,29 @@ h1 {
 
 /* Layout for Introduction Page */
 
-.intro-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 30px;
-    padding: 60px 40px;
-}
-
-.intro-text {
-    flex: 1;
-    max-width: 550px;
-    text-align: center; 
-    padding: 0 20px;
-}
-
-.intro-text h2 {
+.intro-heading h2 {
     font-family: modernLoveCaps, sans-serif;
     font-size: 38px;
     color: #333333;
     margin-bottom: 25px;
     margin-top: 0px;
+    text-align: center; 
+    padding: 20px;
+}
+
+.intro-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.intro-text {
+    flex: 1;
+    max-width:550px;
+    text-align: center; 
+    padding: 0 0px;
 }
 
 .intro-text p {
@@ -238,6 +240,7 @@ h1 {
     line-height: 1.5;
     color: #333333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .intro-text p:last-child {
@@ -463,11 +466,6 @@ h1 {
     display: inline-block;
 }
 
-.desires-sections {
-    margin-top: 40px;
-    text-align: center;
-}
-
 
 footer {
     border-top: 1px solid #333333;
@@ -512,13 +510,14 @@ footer {
 /* Layout for Experience Page */
 
 #experience-page {
-    padding-top: 80px;
+    padding-top: 40px;
     text-align: center;
 }
 
 #experience-page h2 {
     margin-bottom: 40px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-family: modernLoveCaps, sans-serif; 
 }
 
 .experience-grid {
