@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Navigation:
     //This is the JS driven navigation for all othe pages in my website. 
 
-    //Too see if we are currently inside the "Pages" folder
+    //To see if we are currently inside the "Pages" folder
     const isInPagesFolder = window.location.pathname.includes('/Pages/');
     
     // ./ for index
@@ -35,12 +35,22 @@ document.addEventListener("DOMContentLoaded", function () {
     //the HTML for your nav bar using the correct relative paths
     const navigationHTML = `
         <nav class="nav-bar">
-            <ul>
-                <li><a href="${basePrefix}Pages/about.html">About Me</a></li>
-                <li><a href="${basePrefix}Pages/experience.html">Experience</a></li>
-                <li><a href="${basePrefix}Pages/artworks.html">Artworks</a></li>
-                <li><a href="${basePrefix}Pages/introduction.html">Introduction</a></li>
-            </ul>
+            <button class="menu-toggle" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="nav-menu-wrapper"> 
+                <button class="menu-close" aria-label="Close Menu">&times;</button>
+
+                <ul>
+                    <li><a href="${basePrefix}Pages/about.html">About Me</a></li>
+                    <li><a href="${basePrefix}Pages/experience.html">Experience</a></li>
+                    <li><a href="${basePrefix}Pages/artworks.html">Artworks</a></li>
+                    <li><a href="${basePrefix}Pages/introduction.html">Introduction</a></li>
+                </ul>
+            </div>
         </nav>
     `;
 
@@ -59,6 +69,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 link.classList.add('active');
             }
         });
+
+        const menuToggle = placeholder.querySelector('.menu-toggle');
+        const menuClose = placeholder.querySelector('.menu-close');
+        const navMenuWrapper = placeholder.querySelector('.nav-menu-wrapper');
+
+        if (menuToggle && menuClose && navMenuWrapper) {
+            // Open Side Nav
+            menuToggle.addEventListener('click', () => {
+                navMenuWrapper.classList.add('is-open');
+            });
+
+            // Close Side Nav
+            menuClose.addEventListener('click', () => {
+                navMenuWrapper.classList.remove('is-open');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenuWrapper.classList.remove('is-open');
+                });
+            });
+        }
     } 
 
     //h1 is the Home link
