@@ -712,11 +712,6 @@ footer {
     .responsive-media.video-style {
         max-width: 100%;
     }
-
-    .skills-row {
-        flex-direction: column;
-        gap: 20px;
-    }
 }
 
 /* Responsive adjustments for small tablet/ large phone (screen below 768px) */
@@ -889,6 +884,11 @@ footer {
     footer {
         padding: 30px 10px;
         text-align: center;
+    }
+
+    .skills-row {
+        flex-direction: column;
+        gap: 30px;
     }
 }
 
