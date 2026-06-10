@@ -173,16 +173,25 @@ containers.forEach(container => {
     const track = container.querySelector('.gallery-track');
     const nextBtn = container.querySelector('.next-arrow');
     const prevBtn = container.querySelector('.prev-arrow');
-    
-    const scrollAmount = 330;
 
-    if(nextBtn && prevBtn && track) {
+    if (nextBtn && prevBtn && track) {
+
+        const getScrollAmount = () => {
+            const firstCard = track.querySelector('.flip-card');
+            if (firstCard) {
+                const cardWidth = firstCard.getBoundingClientRect().width;
+                const computedGap = parseFloat(window.getComputedStyle(track).gap) || 0;
+                return cardWidth + computedGap;
+            }
+            return 330;
+        };
+
         nextBtn.addEventListener('click', () => {
-            track.scrollLeft += scrollAmount;
+            track.scrollLeft += getScrollAmount();
         });
 
         prevBtn.addEventListener('click', () => {
-            track.scrollLeft -= scrollAmount;
+            track.scrollLeft -= getScrollAmount();
         });
     }
 });

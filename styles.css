@@ -735,6 +735,30 @@ footer {
     .nav-bar li:last-child a {
         border-bottom: none;
     }
+
+    .media-category {
+        padding: 15px 10px;
+    }
+
+    .gallery-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gallery-track {
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    .flip-card {
+        width: calc(100vw - 110px);
+        max-width: 280px;
+        height: 340px;
+    }
+
+    .flip-card:hover {
+        transform: none; 
+    }
     
     .experience-grid {
         gap: 20px;
